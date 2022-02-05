@@ -1,10 +1,23 @@
 package org.launchcode.studio7;
 
-public class DVD {
+public class DVD extends BaseDisc implements OpticalDisc{
 
-    // TODO: Implement your custom interface.
+    public DVD(){
+        super(5000, "570-1600", "RS-PC and EFMplus");
+    }
 
-    // TODO: Determine which fields, methods, and constructors can be extended from the base class and which ones
-    //  need to be declared separately.
+    @Override
+    public void spinDisc(){
+        System.out.println("A DVD spins at a rate of " + this.getSpinRate() + "RPM");
+    }
 
+    @Override
+    public void storeData(){
+        System.out.println("CD can store" + this.getStorageCapacity() + "MB of data");
+    }
+
+    @Override
+    public void reportError(){
+        System.out.println("DVD reports errors " + this.getErrorCodes());
+    }
 }
